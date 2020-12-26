@@ -33,6 +33,6 @@ public class Skill
     public float cost;
     [Header("圖片")]
     public Sprite image;
-    [Header("冷卻"), Range(0f, 10f)]
+    [Header("冷卻"), Range(0f, 100f)]
     public float cd;
 }

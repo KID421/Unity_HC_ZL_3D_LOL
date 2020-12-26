@@ -18,23 +18,23 @@ MonoBehaviour:
   attack: 20
   attackCD: 1
   skills:
-  - name: 
-    attack: 4.5
-    cost: 3.1
-    image: {fileID: 0}
-    cd: 3.7
-  - name: 
-    attack: 6
-    cost: 7.3
-    image: {fileID: 0}
-    cd: 0
-  - name: 
-    attack: 5
-    cost: 9.8
-    image: {fileID: 0}
-    cd: 0
-  - name: 
+  - name: "\u81F4\u547D\u6253\u64CA"
+    attack: 100
+    cost: 30
+    image: {fileID: 21300000, guid: 773f70dfadcdb3a43938a78fed1ace28, type: 3}
+    cd: 9
+  - name: "\u52C7\u6C23"
     attack: 0
-    cost: 0
-    image: {fileID: 0}
-    cd: 0
+    cost: 50
+    image: {fileID: 21300000, guid: 29d1b4f133b3d01459de552746fc3889, type: 3}
+    cd: 12
+  - name: "\u5BE9\u5224"
+    attack: 30
+    cost: 20
+    image: {fileID: 21300000, guid: 0be385c4a46732f42869beea2019998b, type: 3}
+    cd: 30
+  - name: "\u8482\u746A\u897F\u4E9E\u5236\u88C1"
+    attack: 100
+    cost: 50
+    image: {fileID: 21300000, guid: 7e12499e7e486f543a2efb6c5308de5e, type: 3}
+    cd: 60

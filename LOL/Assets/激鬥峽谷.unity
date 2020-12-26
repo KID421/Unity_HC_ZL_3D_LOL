@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 110419655}
   - component: {fileID: 110419654}
   m_Layer: 5
-  m_Name: "\u6280\u80FD\u5716\u7247 1"
+  m_Name: "\u6280\u80FD\u5716\u7247 4"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1233,7 +1233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1651,7 +1651,7 @@ GameObject:
   - component: {fileID: 483232468}
   - component: {fileID: 483232467}
   m_Layer: 5
-  m_Name: "\u6280\u80FD\u51B7\u537B 1"
+  m_Name: "\u6280\u80FD\u51B7\u537B 4"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1826,7 +1826,7 @@ GameObject:
   - component: {fileID: 584852991}
   - component: {fileID: 584852990}
   m_Layer: 5
-  m_Name: "\u6280\u80FD\u51B7\u537B 1"
+  m_Name: "\u6280\u80FD\u51B7\u537B 2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2123,7 +2123,7 @@ GameObject:
   - component: {fileID: 757061929}
   - component: {fileID: 757061928}
   m_Layer: 5
-  m_Name: "\u6280\u80FD\u5716\u7247 1"
+  m_Name: "\u6280\u80FD\u5716\u7247 3"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2161,7 +2161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2576,6 +2576,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1189946412 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cb5c9cedca12e1a4aa282ae7b53f42ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 1862763375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1189946415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189946412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3293cbba238a8094d9351585b33c5406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 8644bfc3f13a21241a846cfbcf3522e6, type: 2}
 --- !u!1 &1198752598
 GameObject:
   m_ObjectHideFlags: 0
@@ -3025,7 +3044,7 @@ GameObject:
   - component: {fileID: 1444811901}
   - component: {fileID: 1444811900}
   m_Layer: 5
-  m_Name: "\u6280\u80FD\u5716\u7247 1"
+  m_Name: "\u6280\u80FD\u5716\u7247 2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3063,7 +3082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4409,7 +4428,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: cb5c9cedca12e1a4aa282ae7b53f42ab,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 56.08
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cb5c9cedca12e1a4aa282ae7b53f42ab,
         type: 3}
@@ -4419,7 +4438,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: cb5c9cedca12e1a4aa282ae7b53f42ab,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 35.5
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cb5c9cedca12e1a4aa282ae7b53f42ab,
         type: 3}
@@ -4654,7 +4673,7 @@ GameObject:
   - component: {fileID: 1925292801}
   - component: {fileID: 1925292800}
   m_Layer: 5
-  m_Name: "\u6280\u80FD\u51B7\u537B 1"
+  m_Name: "\u6280\u80FD\u51B7\u537B 3"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
