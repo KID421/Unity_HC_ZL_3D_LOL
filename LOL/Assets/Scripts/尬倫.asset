@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5085ce3fa74c6f44ba767eeef14ae153, type: 3}
+  m_Name: "\u5C2C\u502B"
+  m_EditorClassIdentifier: 
+  hp: 500
+  mp: 200
+  speed: 3.5
+  attack: 20
+  attackCD: 1
+  skills:
+  - name: 
+    attack: 4.5
+    cost: 3.1
+    image: {fileID: 0}
+    cd: 3.7
+  - name: 
+    attack: 6
+    cost: 7.3
+    image: {fileID: 0}
+    cd: 0
+  - name: 
+    attack: 5
+    cost: 9.8
+    image: {fileID: 0}
+    cd: 0
+  - name: 
+    attack: 0
+    cost: 0
+    image: {fileID: 0}
+    cd: 0
