@@ -12,11 +12,11 @@ public class HeroBase : MonoBehaviour
     /// <summary>
     /// 技能計時器：累加時間用
     /// </summary>
-    private float[] skillTimer = new float[4];
+    protected float[] skillTimer = new float[4];
     /// <summary>
     /// 技能是否開始
     /// </summary>
-    private bool[] skillStart = new bool[4];
+    protected bool[] skillStart = new bool[4];
 
     private Rigidbody rig;
 
@@ -57,8 +57,10 @@ public class HeroBase : MonoBehaviour
     /// <param name="target">要前往的目標位置</param>
     public void Move(Transform target)
     {
-        // 剛體.移動座標(座標)
-        rig.MovePosition(target.position);
+        Vector3 pos = rig.position;
+        rig.MovePosition(target.position);                  // 剛體.移動座標(座標)
+        transform.LookAt(target);                           // 看向(目標物件)
+        ani.SetBool("跑步開關", rig.position != pos);        // 動畫.設定布林值(跑步參數，現在座標 不等於 前面座標)
     }
 
     public void Skill1()

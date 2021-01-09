@@ -14,6 +14,7 @@ public class HeroPlayer : HeroBase
 
     private Image[] imgSkills = new Image[4];
     private Text[] textSkills = new Text[4];
+    private Image[] imgSkillsCD = new Image[4];
 
     /// <summary>
     /// 目標物件
@@ -47,6 +48,7 @@ public class HeroPlayer : HeroBase
     {
         base.Update();
         MoveControl();
+        UpdateSkillCD();
     }
 
     /// <summary>
@@ -82,10 +84,34 @@ public class HeroPlayer : HeroBase
         for (int i = 0; i < 4; i++)
         {
             imgSkills[i] = GameObject.Find("技能圖片 " + (i + 1)).GetComponent<Image>();
+            imgSkillsCD[i] = GameObject.Find("技能冷卻圖片 " + (i + 1)).GetComponent<Image>();
             textSkills[i] = GameObject.Find("技能冷卻 " + (i + 1)).GetComponent<Text>();
             // 更新技能圖片與冷卻時間
             imgSkills[i].sprite = data.skills[i].image;
             textSkills[i].text = "";
+        }
+    }
+
+    /// <summary>
+    /// 更新技能介面冷卻效果
+    /// </summary>
+    private void UpdateSkillCD()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            if (skillStart[i])
+            {
+                // 技能文字.文字 = (冷卻時間 - 計時器).轉為字串("F0") - F 後面的數字代表小數點位數
+                textSkills[i].text = (data.skills[i].cd - skillTimer[i]).ToString("F0");
+                // 技能冷卻圖片.填滿 = 倒數時間 / 冷卻時間
+                imgSkillsCD[i].fillAmount = (data.skills[i].cd - skillTimer[i]) / data.skills[i].cd;
+            }
+            // 停止時 將 文字 清空
+            else
+            {
+                textSkills[i].text = "";
+                imgSkillsCD[i].fillAmount = 0;
+            }
         }
     }
 }

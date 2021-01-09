@@ -12,14 +12,14 @@ public class CameraControl : MonoBehaviour
     /// </summary>
     private void Track()
     {
-        Vector3 posA = target.position;
-        Vector3 posB = transform.position;
+        Vector3 posA = target.position;                                             // 目標座標
+        Vector3 posB = transform.position;                                          // 攝影機座標
 
-        posB = Vector3.Lerp(posB, posA, 0.5f * speed * Time.deltaTime);
-        transform.position = posB;
+        posB = Vector3.Lerp(posB, posA, 0.5f * Time.deltaTime * speed);             // 插值
+        transform.position = posB;                                                  // 攝影機的座標 = 攝影機座標
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         Track();
     }
