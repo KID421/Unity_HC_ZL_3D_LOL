@@ -18,14 +18,17 @@ public class HeroBase : MonoBehaviour
     /// </summary>
     private bool[] skillStart = new bool[4];
 
+    private Rigidbody rig;
+
     // protected 保護 - 允許子類別存取
     // virtual 虛擬 - 允許子類別複寫
     protected virtual void Awake()
     {
         ani = GetComponent<Animator>();
+        rig = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         TimerControl();
     }
@@ -48,9 +51,14 @@ public class HeroBase : MonoBehaviour
         }
     }
 
-    public void Move()
+    /// <summary>
+    /// 移動
+    /// </summary>
+    /// <param name="target">要前往的目標位置</param>
+    public void Move(Transform target)
     {
-
+        // 剛體.移動座標(座標)
+        rig.MovePosition(target.position);
     }
 
     public void Skill1()
