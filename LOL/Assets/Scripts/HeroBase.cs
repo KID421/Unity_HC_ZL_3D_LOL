@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class HeroBase : MonoBehaviour
 {
@@ -19,6 +20,24 @@ public class HeroBase : MonoBehaviour
     protected bool[] skillStart = new bool[4];
 
     private Rigidbody rig;
+    /// <summary>
+    /// 血量
+    /// </summary>
+    private float hp;
+    /// <summary>
+    /// 畫布血條
+    /// </summary>
+    private Transform canvasHp;
+    /// <summary>
+    /// 血條文字
+    /// </summary>
+    private Text textHp;
+    /// <summary>
+    /// 血條
+    /// </summary>
+    private Image imgHp;
+
+    private float hpMax;
 
     // protected 保護 - 允許子類別存取
     // virtual 虛擬 - 允許子類別複寫
@@ -26,6 +45,11 @@ public class HeroBase : MonoBehaviour
     {
         ani = GetComponent<Animator>();
         rig = GetComponent<Rigidbody>();
+        // 取得畫布並更新血條文字
+        canvasHp = transform.Find("畫布血條");
+        textHp = canvasHp.Find("血條文字").GetComponent<Text>();
+        textHp.text = data.hp.ToString();
+        imgHp = canvasHp.Find("血條").GetComponent<Image>();
     }
 
     protected virtual void Update()
@@ -33,12 +57,29 @@ public class HeroBase : MonoBehaviour
         TimerControl();
     }
 
+    private void Start()
+    {
+        hp = data.hp;
+        hpMax = hp;
+    }
+
     /// <summary>
     /// 受傷
     /// </summary>
     public void Damage(float damage)
     {
-        data.hp -= damage;
+        hp -= damage;
+        textHp.text = hp.ToString();
+        imgHp.fillAmount = hp / hpMax;
+
+        if (hp <= 0) Dead();
+    }
+
+    private void Dead()
+    {
+        textHp.text = "0";
+        enabled = false;
+        ani.SetBool("死亡開關", true);
     }
 
     private void TimerControl()
@@ -69,6 +110,7 @@ public class HeroBase : MonoBehaviour
         rig.MovePosition(target.position);                  // 剛體.移動座標(座標)
         transform.LookAt(target);                           // 看向(目標物件)
         ani.SetBool("跑步開關", rig.position != pos);        // 動畫.設定布林值(跑步參數，現在座標 不等於 前面座標)
+        canvasHp.eulerAngles = new Vector3(65, -90, 0);     // 角度不變
     }
 
     public void Skill1()
