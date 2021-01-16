@@ -33,6 +33,14 @@ public class HeroBase : MonoBehaviour
         TimerControl();
     }
 
+    /// <summary>
+    /// 受傷
+    /// </summary>
+    public void Damage(float damage)
+    {
+        data.hp -= damage;
+    }
+
     private void TimerControl()
     {
         for (int i = 0; i < 4; i++)
