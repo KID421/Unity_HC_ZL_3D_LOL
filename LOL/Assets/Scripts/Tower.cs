@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Tower : MonoBehaviour
 {
@@ -14,11 +15,33 @@ public class Tower : MonoBehaviour
     public int layer;
     [Header("冷卻"), Range(0, 5)]
     public float cd;
+    [Header("血量"), Range(0, 5000)]
+    public float hp = 2000;
 
+    /// <summary>
+    /// 血量最大值
+    /// </summary>
+    private float hpMax;
     /// <summary>
     /// 計時器
     /// </summary>
     private float timer;
+    /// <summary>
+    /// 血條文字
+    /// </summary>
+    private Text textHp;
+    /// <summary>
+    /// 血條
+    /// </summary>
+    private Image imgHp;
+    /// <summary>
+    /// 畫布血條
+    /// </summary>
+    private Transform canvasHp;
+    /// <summary>
+    /// 是否死亡
+    /// </summary>
+    private bool dead;
 
     private void OnDrawGizmos()
     {
@@ -29,10 +52,16 @@ public class Tower : MonoBehaviour
     private void Start()
     {
         timer = cd;
+        hpMax = hp;
+        canvasHp = transform.Find("畫布血條");
+        textHp = canvasHp.Find("血條文字").GetComponent<Text>();
+        textHp.text = hp.ToString();
+        imgHp = canvasHp.Find("血條").GetComponent<Image>();
     }
 
     private void Update()
     {
+        if (dead) return;       // 如果 死亡 就 跳出
         Track();
     }
 
@@ -64,5 +93,29 @@ public class Tower : MonoBehaviour
                 bullet.atk = atk;                               // 指定攻擊力
             }
         }
+    }
+
+    /// <summary>
+    /// 受傷
+    /// </summary>
+    /// <param name="damage">接收的傷害值</param>
+    public void Damage(float damage)
+    {
+        hp -= damage;
+        textHp.text = hp.ToString();
+        imgHp.fillAmount = hp / hpMax;
+
+        if (hp <= 0) Dead();
+    }
+    
+    /// <summary>
+    /// 死亡
+    /// </summary>
+    protected virtual void Dead()
+    {
+        hp = 0;
+        textHp.text = 0.ToString();
+        dead = true;
+        gameObject.layer = 0;
     }
 }
